@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/YueweiMarket/static/js/main.b2896bd8.js",
+    "main.js": "/YueweiMarket/static/js/main.9c8dfce5.js",
     "static/js/787.f4b4d39d.chunk.js": "/YueweiMarket/static/js/787.f4b4d39d.chunk.js",
     "index.html": "/YueweiMarket/index.html",
-    "main.b2896bd8.js.map": "/YueweiMarket/static/js/main.b2896bd8.js.map",
+    "main.9c8dfce5.js.map": "/YueweiMarket/static/js/main.9c8dfce5.js.map",
     "787.f4b4d39d.chunk.js.map": "/YueweiMarket/static/js/787.f4b4d39d.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.b2896bd8.js"
+    "static/js/main.9c8dfce5.js"
   ]
 }
