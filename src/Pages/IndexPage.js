@@ -25,7 +25,7 @@ function IndexPage() {
     return (
         <Box>
             <Box sx={{ minHeight: "200px", p: "5rem" }}>
-                <Typography variant="h1" color="initial">高科超棒租屋網</Typography>
+                <Typography variant="h1" color="initial">燕巢超棒超市</Typography>
             </Box>
             <Divider />
             <Box sx={{ p: 10 }}>

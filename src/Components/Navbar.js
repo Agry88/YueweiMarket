@@ -39,7 +39,7 @@ function Navbar() {
                     <IconButton onClick={ReturnToIndex}>
                         <HomeIcon sx={{ color: "#fff" }} />
                         <Typography variant="h6" sx={{ color: "#fff" }}>
-                            高科超棒租屋網
+                            燕巢超級超市
                         </Typography>
                     </IconButton>
                 </Stack>
