@@ -42,7 +42,7 @@ function ShopCar() {
 
     useEffect(() => {
         if (Member != null) {
-            setMemberID(Member[0].會員帳號);
+            setMemberID(Member.會員帳號);
         }
     }, [Member])
 

@@ -68,7 +68,7 @@ function SailTitle() {
 
     useEffect(() => {
         const Temp = sailTitle.filter((data) =>
-            data.會員帳號 == Member[0].會員帳號
+            data.會員帳號 == Member.會員帳號
         )
 
         setUserSailTitle(Temp);

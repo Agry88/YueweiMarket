@@ -11,7 +11,7 @@ import SailTitle from './Pages/SailTitle';
 
 function App() {
   return (
-    <Router>
+    <Router basename={"/YueweiMarket"}>
       <Box sx={{ backgroundColor: "grey.100" }}>
         <Navbar />
         <Box sx={{ pt: "4rem" }}>

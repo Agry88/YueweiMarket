@@ -46,9 +46,14 @@ export const SetMemberStore = (sheetName, ways, memberAccount, memberPassword) =
                         Data: {}
                     })
                 } else {
-                    dispatch({
-                        type: 'SetMemberStore',
-                        Data: datas
+                    datas.map((data) => {
+                        if (data != null) {
+                            console.log("data",data);
+                            dispatch({
+                                type: 'SetMemberStore',
+                                Data: data
+                            })
+                        }
                     })
                 }
             })
