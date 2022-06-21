@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/YueweiMarket/static/js/main.ce81402c.js",
+    "static/js/787.f4b4d39d.chunk.js": "/YueweiMarket/static/js/787.f4b4d39d.chunk.js",
+    "index.html": "/YueweiMarket/index.html",
+    "main.ce81402c.js.map": "/YueweiMarket/static/js/main.ce81402c.js.map",
+    "787.f4b4d39d.chunk.js.map": "/YueweiMarket/static/js/787.f4b4d39d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ce81402c.js"
+  ]
+}
