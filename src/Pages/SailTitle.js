@@ -67,11 +67,13 @@ function SailTitle() {
     const [UserSailTitle, setUserSailTitle] = useState();
 
     useEffect(() => {
-        const Temp = sailTitle.filter((data) =>
-            data.會員帳號 == Member.會員帳號
-        )
+        if (sailTitle != null) {
+            const Temp = sailTitle.filter((data) =>
+                data.會員帳號 == Member.會員帳號
+            )
 
-        setUserSailTitle(Temp);
+            setUserSailTitle(Temp);
+        }
     }, [sailTitle])
 
     const [SelectedCar, setSelectedCar] = useState("");
@@ -127,49 +129,53 @@ function SailTitleModal(props) {
     let UserProductDatas = new Array();
     // const [UserProductDatas, setUserProductDatas] = useState([]);
     useEffect(() => {
-        const temp = Car.filter((data) => (
-            data.購物車ID == SelectedCar
-        ));
-        setUserCardDatas(temp); //取得該購物車有的商品
-    }, [])
+        if (Car != null) {
+            const temp = Car.filter((data) => (
+                data.購物車ID == SelectedCar
+            ));
+            setUserCardDatas(temp); //取得該購物車有的商品
+        }
+    }, [Car])
 
     useEffect(() => {
         if (UserCardDatas != null) {
-            UserCardDatas.map((data) => 
-                AllProducts.map((Prod) => {
-                    if (Prod.ID == data.商品ID) {
-                        console.log({ ...Prod, ...data });
-                        UserProductDatas = [...UserProductDatas,{ ...Prod, ...data }];
-                        // setUserProductDatas([...UserProductDatas, { ...Prod, ...data }]);
-                        setShowDatas(UserProductDatas);
-                    }
-                }),
-                
-            )
+            if (AllProducts != null) {
+                UserCardDatas.map((data) =>
+                    AllProducts.map((Prod) => {
+                        if (Prod.ID == data.商品ID) {
+                            console.log({ ...Prod, ...data });
+                            UserProductDatas = [...UserProductDatas, { ...Prod, ...data }];
+                            // setUserProductDatas([...UserProductDatas, { ...Prod, ...data }]);
+                            setShowDatas(UserProductDatas);
+                        }
+                    }),
+
+                )
+            }
         }
     }, [UserCardDatas])
 
 
     return (
         <Box sx={style}>
-            {ShowDatas &&
-            ShowDatas.map((data) => {
-                return (
-                    <Box key={data.ID} sx={{ boxShadow: 3, minHeight: "10rem", display: "flex", alignitems: "center", p: 2 }}>
-                        <ImageListItem key={data.ID} sx={{
-                            width: "10rem",
-                            border: 5,
-                            borderColor: "#000",
-                        }}>
-                            <img src={data.src} />
-                        </ImageListItem>
-                        <Typography variant="h5" color="initial" sx={{ alignSelf: "center", ml: 5 }}>{data.商品名稱}</Typography>
-                        <Typography variant="h5" color="initial" sx={{ alignSelf: "center", ml: 4 }}>${data.商品價格}</Typography>
-                        <Typography variant="h5" color="initial" sx={{ alignSelf: "center", ml: 4 }}>數量{data.商品價格}</Typography>
-                        <Typography variant="h5" color="initial" sx={{ alignSelf: "center", ml: 8 }}>總價格${(data.數量) * data.商品價格}</Typography>
-                    </Box>
-                )
-            })}
+            {ShowDatas != null &&
+                ShowDatas.map((data) => {
+                    return (
+                        <Box key={data.ID} sx={{ boxShadow: 3, minHeight: "10rem", display: "flex", alignitems: "center", p: 2 }}>
+                            <ImageListItem key={data.ID} sx={{
+                                width: "10rem",
+                                border: 5,
+                                borderColor: "#000",
+                            }}>
+                                <img src={data.src} />
+                            </ImageListItem>
+                            <Typography variant="h5" color="initial" sx={{ alignSelf: "center", ml: 5 }}>{data.商品名稱}</Typography>
+                            <Typography variant="h5" color="initial" sx={{ alignSelf: "center", ml: 4 }}>${data.商品價格}</Typography>
+                            <Typography variant="h5" color="initial" sx={{ alignSelf: "center", ml: 4 }}>數量{data.商品價格}</Typography>
+                            <Typography variant="h5" color="initial" sx={{ alignSelf: "center", ml: 8 }}>總價格${(data.數量) * data.商品價格}</Typography>
+                        </Box>
+                    )
+                })}
         </Box>
     );
 }
